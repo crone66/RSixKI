@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AA555296-CF24-4DD6-980B-768EDA67A697}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RSixKI</RootNamespace>
+    <AssemblyName>RSixKI</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>DesktopGL</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;LINUX</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;LINUX</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Game\Enities\Noise.cs" />
+    <Compile Include="Game\Scenes\GameOverArgs.cs" />
+    <Compile Include="Game\Scenes\MenuScene.cs" />
+    <Compile Include="Game\Scenes\Scene.cs" />
+    <Compile Include="Game\Enities\Components\HealthChangedArgs.cs" />
+    <Compile Include="Game\Enities\Components\HealthChangingArgs.cs" />
+    <Compile Include="Game\Helpers.cs" />
+    <Compile Include="Game\CollisionDetection.cs" />
+    <Compile Include="Game\CollisionGrid.cs" />
+    <Compile Include="Game\Enities\Base\CollisionArgs.cs" />
+    <Compile Include="Game\Enities\Base\CollidAble.cs" />
+    <Compile Include="Game\Enities\Base\DrawAble.cs" />
+    <Compile Include="Game\Enities\Base\MovedArgs.cs" />
+    <Compile Include="Game\Enities\Base\MovingArgs.cs" />
+    <Compile Include="Game\Enities\Projectile.cs" />
+    <Compile Include="Game\Enities\VisableEntity.cs" />
+    <Compile Include="Game\Enities\Character.cs" />
+    <Compile Include="Game\Enities\Base\Entity.cs" />
+    <Compile Include="Game\Enities\Base\EntityComponent.cs" />
+    <Compile Include="Game\Enities\Components\DamageAbleObject.cs" />
+    <Compile Include="Game\Enities\InteractivObject.cs" />
+    <Compile Include="Game\Enities\Base\EntityManager.cs" />
+    <Compile Include="Game\Enities\Equipment.cs" />
+    <Compile Include="Game1.cs" />
+    <Compile Include="Game\Enities\Gadget.cs" />
+    <Compile Include="Game\InformationContainer\CharacterInformation.cs" />
+    <Compile Include="Game\InformationContainer\LevelContainer.cs" />
+    <Compile Include="Game\InformationContainer\ProjectileInformation.cs" />
+    <Compile Include="Game\InformationContainer\TextureAssignment.cs" />
+    <Compile Include="Game\InformationContainer\WeaponContainer.cs" />
+    <Compile Include="Game\InformationContainer\WeaponInformation.cs" />
+    <Compile Include="Game\Menu\Button.cs" />
+    <Compile Include="Game\Menu\CloseArgs.cs" />
+    <Compile Include="Game\Menu\Control.cs" />
+    <Compile Include="Game\Menu\MainMenu.cs" />
+    <Compile Include="Game\Menu\Menu.cs" />
+    <Compile Include="Game\Scenes\SceneChangeArgs.cs" />
+    <Compile Include="Game\Scenes\SceneManager.cs" />
+    <Compile Include="Game\Enities\Weapon.cs" />
+    <Compile Include="KI\AStar\AStar.cs" />
+    <Compile Include="KI\AStar\Node.cs" />
+    <Compile Include="KI\Genetics\BalancingGeneticAlgorithm.cs" />
+    <Compile Include="KI\Genetics\Decision.cs" />
+    <Compile Include="KI\Genetics\Base\Individuum.cs" />
+    <Compile Include="KI\Genetics\Base\IterationArgs.cs" />
+    <Compile Include="KI\Genetics\ChoiceDecision.cs" />
+    <Compile Include="KI\PlayerController.cs" />
+    <Compile Include="Game\Level.cs" />
+    <Compile Include="Game\Enities\NPC.cs" />
+    <Compile Include="Game\Enities\Player.cs" />
+    <Compile Include="KI\Genetics\Base\GenericGeneticAlgorihm.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Game\Scenes\GameScene.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="NVorbis">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\NVorbis.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon.ico" />
+    <Content Include="Content\Levels\BaseFiles\level02.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Levels\BaseFiles\level01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Levels\Training\level01.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\0.png" />
+    <Content Include="Content\Textures\1.png" />
+    <Content Include="Content\Textures\3.png" />
+    <Content Include="Content\Textures\2.png" />
+    <Content Include="Content\Textures\4.png" />
+    <Content Include="Content\Textures\5.png" />
+    <Content Include="Content\Textures\6.png" />
+    <Content Include="Content\Textures\npc.png" />
+    <Content Include="Content\Textures\player.png" />
+    <Content Include="Content\Textures\hostage.png" />
+    <Content Include="Content\Textures\projectile.png" />
+    <Content Include="Content\Weapons\weapons.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OpenTK.dll.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Equipment\" />
+    <Folder Include="Content\Gadgets\" />
+    <Folder Include="Content\Levels\Test\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
